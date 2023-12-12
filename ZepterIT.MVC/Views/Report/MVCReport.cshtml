@@ -1,0 +1,29 @@
+﻿@page
+@model List<MVCReportViewModel>
+@{
+
+}
+
+<div class="container">
+	<h1>Dane pobrane przy pomocy Entity Framework</h1>
+	<hr />
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Typ płatności</th>
+				<th scope="col">Ilość zamówień</th>
+				<th scope="col">Wartość brutto</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var report in Model)
+			{
+				<tr>
+					<td>@report.PaymentMethod</td>
+					<td>@report.OrdersNumber</td>
+					<td>@report.GrossPrice</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
